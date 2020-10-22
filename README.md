@@ -1,16 +1,25 @@
 # Spin
- Spin is a USB volume/mute control device based on the Adafruit Trinket M0.
- Spinning the dial left or right increments and decrements volume of a host computer and pressing down the dial mutes/unmutes the speakers.
+ Spin is a low cost USB volume/mute control device based on the Adafruit Trinket M0. It grew out of the need to have an easy to access volume control during long Zoom meetings.
+ 
+The outer piece is entirely free spinning, thanks to a rotary encoder. Spinning the dial left or right increments and decrements volume of a host computer and pressing down the dial mutes/unmutes the speakers. It can be built in under an hour with less than $20 of parts.
  
 <img src="https://github.com/kk6axq/Spin/blob/main/media/Main%20View.jpg?raw=true" alt="" width="75%">
 
 ## Hardware
-Spin's brain is an Adafruit Trinket M0, a SAMD21 based board, running CircuitPython. The physical interface is a rotary encoder with integrated button, available cheaply on Amazon. The enclosure is made up of 3 3D printed parts. All together, the project costs less than $20.
+Spin's brain is an Adafruit Trinket M0, running CircuitPython. The physical interface is a rotary encoder with integrated button, available cheaply on Amazon. The enclosure is made up of 3 3D printed parts.
 
 <img src="https://github.com/kk6axq/Spin/blob/main/media/Model%20View.PNG?raw=true" alt="" width="50%">
 
 ## Software
-Spin works by emulating a USB HID device and using Consumer Control codes to send volume increment, decrement, and mute commands. The device requires no drivers and should work under all operating systems, though it has only been tested with Windows 10. Because it runs CircuitPython, no toolchain is required and the device can be dynamically reprogrammed by editing the files within emulated USB storage.
+Spin works by emulating a USB HID device and using Consumer Control codes to send volume increment, decrement, and mute commands. It requires no drivers and should work under all operating systems, though it has only been tested with Windows 10. Also, as it runs CircuitPython, no toolchain is required and the device can be dynamically reprogrammed by editing the files within the emulated USB storage.
+
+## Materials
+This can be built using parts you may already have on hand. Any CircuitPython compatible board can be used in place of the Trinket.
+* 1x Adafruit Trinket M0
+* 1x Rotary encoder with pushbutton
+* 5x ~4" (10cm) pieces of flexible thin gauge wire
+* 1 each of the 3D printed parts
+* Miscellaneous: packing tape, thread lock, superglue or hot glue, and solder
 
 ## Setup
 * **Print the 3 parts.** STL files are provided in the `CAD` folder, and an OpenSCAD file is available for those that want to modify the design. I printed the pieces in PLA with 20% infill, 0.2mm layer height, line supports, and a brim on a Creality CR-10. 
@@ -35,7 +44,7 @@ Spin works by emulating a USB HID device and using Consumer Control codes to sen
 * **Final test.** Plug it into the computer. If everything works, you're done. If not, resolve any issues before putting on the top piece, as it's difficult to separate once it's in place.
 * **Final assembly.** Finally, press the top piece onto the encoder knob, making sure to press straight down to not bend it.  
 
-## Materials
+## Material sourcing
 The only link that is important is the encoder link. I'm fairly sure it's a generic Chinesium part, but that's the exact product I used, so that's the only one I know will fit (until they change the product).
 
 For the USB cable, it's helpful to have a right angle version to reduce bulkiness inside the case.
