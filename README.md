@@ -5,6 +5,11 @@ The outer piece is entirely free spinning, thanks to a rotary encoder. Spinning 
  
 <img src="https://github.com/kk6axq/Spin/blob/main/media/Main%20View.jpg?raw=true" alt="" width="75%">
 
+## Features
+* **Variable speed** The volume is incremented more as the dial is spun faster, allowing for easy control.
+* **Sized for easy use** Spin is 2 1/8" (5.5cm) tall and 2.5" (6.3cm) across, it doesn't take up much room but isn't easily lost amongst desk clutter.
+* **Customizable** The keys can be easily rebound to other Consumer Control codes, including play/pause, skip, and others. 
+
 ## Hardware
 Spin's brain is an Adafruit Trinket M0, running CircuitPython. The physical interface is a rotary encoder with integrated button, available cheaply on Amazon. The enclosure is made up of 3 3D printed parts.
 
