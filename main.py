@@ -13,8 +13,6 @@ encoder = rotaryio.IncrementalEncoder(board.D3, board.D4)
 led = DigitalInOut(board.D1)
 led.direction = Direction.OUTPUT
 
-
-
 switch = DigitalInOut(board.D2)
 switch.direction = Direction.INPUT
 switch.pull = Pull.UP
@@ -23,22 +21,26 @@ led.value=True
 time.sleep(0.5)
 led.value=False
 
-
-
 p_enc_pos = 0
 p_enc_time = 0
 multi = False
 multi_count = 0
 repeat_thresh = 0.04
 start_time = 0
+
 while True:
-    # We could also do "led.value = not switch.value"!
-    if switch.value:
-        led.value = False
-    else:
-        led.value = True
-        consumer_control.send(ConsumerControlCode.MUTE)
+    #This is a really hacky way to do it
+    #but other methods didn't work...
+    if switch.value == False:
+        print("Start")
         time.sleep(0.3)
+        if switch.value == False:
+            time.sleep(0.3)
+            if switch.value == True:
+                consumer_control.send(ConsumerControlCode.PLAY_PAUSE)
+        else:
+            consumer_control.send(ConsumerControlCode.MUTE)
+
     if encoder.position != p_enc_pos:
         start_time = time.monotonic()
         delta_t = start_time - p_enc_time
